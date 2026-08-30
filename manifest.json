@@ -1,0 +1,77 @@
+{
+  "id": "md-tables",
+  "name": "表格工作台",
+  "nameEn": "Table Workbench",
+  "version": "1.0.1",
+  "apiVersion": 1,
+  "description": "markdown 表格的行列操作台:光标落进一张表格,表格上方自动浮出工具条 —— 插入/删除/上下左右移动行列、按当前列排序、切换整列对齐,每个动作是编辑器里的一个事务(Cmd/Ctrl+Z 直接撤销)。命令面板「表格工作台」打开清单视图,鸟瞰这一篇里的每张表(几列几行、表头预览),点一下就跳过去。「格式化」产出竖线对齐的表格源码(中日韩字符按 2 计宽)复制到剪贴板,用来贴 GitHub / README / 别的编辑器。数据流向:零产物文件、零网络 —— 全部工作在当前打开的这一篇笔记的编辑器里,不写磁盘、不读别的文件、不调用任何外部服务;只在浏览器本地存三个界面偏好开关。",
+  "descriptionEn": "A row-and-column workbench for markdown tables. Put the caret inside a table and a toolbar floats above it: insert / delete / move rows and columns, sort by the current column, switch a column's alignment. Every action is a single editor transaction, so Cmd/Ctrl+Z undoes it. The Table Workbench view lists every table in the current note (size, header preview) and jumps to any of them. \"Format\" produces pipe-aligned table source (CJK counted as two columns wide) on your clipboard, for pasting into GitHub, a README, or another editor. Where the data goes: nowhere. No output files, no network — everything happens inside the editor of the note you already have open. Only three UI preference flags are kept in local browser storage.",
+  "main": "main.js",
+  "onboarding": {
+    "intro": "表格工作台 = 光标进表格,工具条就来:行列增删移动、按列排序、整列对齐,外加一份能直接贴走的对齐源码。全程不写任何文件。",
+    "steps": [
+      {
+        "title": "把光标放进一张表格",
+        "description": "表格上方会浮出工具条,分「行 / 列 / 排序 / 对齐 / 源码」五组。每个按钮都有中文悬停说明。不想要它:插件设置里关掉「光标进表格时显示工具条」。"
+      },
+      {
+        "title": "行列增删与移动",
+        "description": "「行」组:上移 / 下移 / 上方插入 / 下方插入 / 删除;「列」组同理。表头行不能删也不能移动;表格至少要保留一行数据、一列 —— 到边界会提示而不是静默失败。每个动作是一个编辑器事务,Cmd/Ctrl+Z 一步撤销。"
+      },
+      {
+        "title": "按列排序",
+        "description": "光标所在列决定排哪一列。整列都是数字(允许千分位逗号与百分号)就按数值排,否则按中文拼音排;空格子永远沉底,相等的行保持原来的先后。命令面板的「按当前列升序排序」恒升序,降序在工具条上。"
+      },
+      {
+        "title": "对齐源码复制走",
+        "description": "「源码」组的按钮(或命令面板「格式化当前表格」)把这张表排成竖线对齐的 markdown 源码放进剪贴板 —— 中日韩字符按两个字符宽计算。注意:它不会改变宿主保存到磁盘时的表格排版(那由宿主的序列化器决定),它产出的是给你贴到别处用的文本。"
+      },
+      {
+        "title": "鸟瞰这一篇里的所有表",
+        "description": "命令面板「表格工作台」打开清单视图:每张表显示序号、表头预览、几列几行。点一行跳过去并展开,展开区里有同一套操作按钮和一块只读的对齐源码。老式分块笔记(v3)下清单只提供跳转与复制源码,行列操作请到表格上方的工具条做。"
+      },
+      {
+        "title": "新建一张表",
+        "description": "在笔记里打 `/` 选「插入表格」,输入 `3x4` 这样的尺寸(行数 x 列数,行数不含表头)。默认尺寸在插件设置里改。插入这一步由宿主完成,插件只负责把那段 markdown 交给它。"
+      },
+      {
+        "title": "数据在哪",
+        "description": "哪儿也不在 —— 本插件不产出任何文件、不读写笔记库里的其他文件、不联网。它只改你正在编辑的这一篇笔记(经编辑器事务),以及在浏览器本地存三个界面偏好(工具条开关、新建表格的默认行列数)。"
+      }
+    ],
+    "en": {
+      "intro": "Table Workbench = caret in a table, toolbar on top: add/remove/move rows and columns, sort by a column, align a column — plus pipe-aligned source you can paste anywhere. It never writes a file.",
+      "steps": [
+        {
+          "title": "Put the caret in a table",
+          "description": "A toolbar floats above it, in five groups: Row / Column / Sort / Align / Source. Every button has a hover description. Don't want it? Turn off \"Show toolbar when cursor enters a table\" in the plugin settings."
+        },
+        {
+          "title": "Rows and columns",
+          "description": "The Row group: move up / move down / insert above / insert below / delete. The Column group mirrors it. The header row can be neither deleted nor moved, and a table must keep at least one body row and one column — at the boundary you get a message instead of a silent no-op. Each action is one editor transaction, so Cmd/Ctrl+Z undoes it in one step."
+        },
+        {
+          "title": "Sort by a column",
+          "description": "The column under the caret is the one that sorts. If every filled cell is a number (thousands separators and a trailing % are fine) it sorts numerically, otherwise by Chinese pinyin collation. Empty cells always sink to the bottom and equal rows keep their original order. The command-palette entry always sorts ascending; descending lives on the toolbar."
+        },
+        {
+          "title": "Copy aligned source",
+          "description": "The Source button (or the \"Format table\" command) puts a pipe-aligned markdown version of this table on your clipboard, counting CJK characters as two columns wide. Note that it does not change how the host writes the table to disk — that is the host's serializer. What you get is text to paste elsewhere."
+        },
+        {
+          "title": "See every table in the note",
+          "description": "Run \"Table Workbench\" from the command palette: each table is listed with its number, a header preview and its size. Click a row to jump there and expand it; the expanded panel carries the same buttons plus a read-only aligned-source box. On legacy block-based notes (v3) the list only jumps and copies — do row/column edits from the toolbar above the table."
+        },
+        {
+          "title": "Make a new table",
+          "description": "Type `/` in a note and pick \"Insert table\", then a size like `3x4` (body rows x columns; the header row is not counted). The default size is a plugin setting. The insertion itself is done by the host — the plugin only hands it the markdown."
+        },
+        {
+          "title": "Where the data lives",
+          "description": "Nowhere. This plugin produces no files, never touches other files in your vault, and never goes online. It edits only the note you have open (through editor transactions) and keeps three interface preferences in local browser storage (toolbar on/off, default rows and columns for new tables)."
+        }
+      ]
+    },
+    "settings": true
+  }
+}
