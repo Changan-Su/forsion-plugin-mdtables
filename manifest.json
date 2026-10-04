@@ -2,7 +2,7 @@
   "id": "md-tables",
   "name": "表格工作台",
   "nameEn": "Table Workbench",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "apiVersion": 1,
   "description": "markdown 表格的行列操作台:光标落进一张表格,表格上方自动浮出工具条 —— 插入/删除/上下左右移动行列、按当前列排序、切换整列对齐,每个动作是编辑器里的一个事务(Cmd/Ctrl+Z 直接撤销)。命令面板「表格工作台」打开清单视图,鸟瞰这一篇里的每张表(几列几行、表头预览),点一下就跳过去。「格式化」产出竖线对齐的表格源码(中日韩字符按 2 计宽)复制到剪贴板,用来贴 GitHub / README / 别的编辑器。数据流向:零产物文件、零网络 —— 全部工作在当前打开的这一篇笔记的编辑器里,不写磁盘、不读别的文件、不调用任何外部服务;只在浏览器本地存三个界面偏好开关。",
   "descriptionEn": "A row-and-column workbench for markdown tables. Put the caret inside a table and a toolbar floats above it: insert / delete / move rows and columns, sort by the current column, switch a column's alignment. Every action is a single editor transaction, so Cmd/Ctrl+Z undoes it. The Table Workbench view lists every table in the current note (size, header preview) and jumps to any of them. \"Format\" produces pipe-aligned table source (CJK counted as two columns wide) on your clipboard, for pasting into GitHub, a README, or another editor. Where the data goes: nowhere. No output files, no network — everything happens inside the editor of the note you already have open. Only three UI preference flags are kept in local browser storage.",
