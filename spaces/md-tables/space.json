@@ -2,6 +2,7 @@
   "id": "md-tables",
   "name": { "zh": "表格工作台", "en": "Table Workbench" },
   "icon": "layout-grid",
+  "iconFile": "icon.png",
   "version": "1.0.0",
   "layout": { "main": [{ "type": "plugin:md-tables:tables" }] },
   "requires": { "views": ["plugin:md-tables:tables"] }
