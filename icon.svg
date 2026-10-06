@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title">
+  <title id="title">Table Workbench — Active column</title>
+  <!-- Original Forsion plugin identity artwork, 2026-10-05. -->
+  <defs><linearGradient id="tile" x1="28" y1="12" x2="222" y2="252" gradientUnits="userSpaceOnUse"><stop stop-color="#355651"/><stop offset="1" stop-color="#1c3734"/></linearGradient></defs>
+  <rect x="4" y="4" width="248" height="248" rx="58" fill="url(#tile)"/>
+  <g style="--ink:#eeefda;--accent:#a2c6ac;--cut:#1c3734" fill="none" stroke="var(--ink)" stroke-width="13" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="57" y="58" width="142" height="143" rx="17"/>
+    <rect x="111" y="65" width="34" height="129" rx="3" fill="var(--accent)" stroke="none"/>
+    <path d="M57 105h142M57 153h142M104 58v143M152 58v143" stroke-width="10"/>
+  </g>
+</svg>
