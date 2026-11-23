@@ -982,11 +982,11 @@ const STYLE = `
 .mdt-title{font-size:20px;font-weight:700;color:inherit}
 .mdt-count{font-size:11.5px;color:var(--text-muted, currentColor)}
 .mdt-flex1{flex:1}
-.mdt-note{font-size:12px;color:var(--text-muted, currentColor);padding:8px 10px;border-radius:10px;border:1px solid var(--border, currentColor);line-height:1.6}
+.mdt-note{font-size:12px;color:var(--text-muted, currentColor);padding:8px 10px;border-radius:var(--radius-md);border:1px solid var(--border, currentColor);line-height:1.6}
 .mdt-empty{padding:44px 12px;text-align:center;color:var(--text-muted, currentColor);font-size:12.5px}
 .mdt-empty b{display:block;font-size:15px;color:inherit;margin-bottom:8px}
 .mdt-list{display:flex;flex-direction:column;gap:6px}
-.mdt-item{border:1px solid var(--border, currentColor);border-radius:12px;background:var(--bg-card);overflow:hidden}
+.mdt-item{border:1px solid var(--border, currentColor);border-radius:var(--radius-md);background:var(--bg-card);overflow:hidden}
 .mdt-item.sel{border-color:var(--accent, currentColor)}
 .mdt-item.bad{opacity:.72}
 .mdt-line{display:flex;align-items:center;gap:10px;padding:9px 12px;cursor:pointer;color:inherit}
@@ -995,19 +995,19 @@ const STYLE = `
 .mdt-prev{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:inherit}
 .mdt-size{font-size:11.5px;color:var(--text-muted, currentColor);white-space:nowrap}
 .mdt-exp{padding:2px 12px 12px;display:flex;flex-direction:column;gap:8px}
-.mdt-ta{width:100%;min-height:96px;max-height:280px;resize:vertical;padding:8px 10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;color:inherit;background:var(--bg);border:1px solid var(--border, currentColor);border-radius:10px;outline:none;white-space:pre}
+.mdt-ta{width:100%;min-height:96px;max-height:280px;resize:vertical;padding:8px 10px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;color:inherit;background:var(--bg);border:1px solid var(--border, currentColor);border-radius:var(--radius-sm);outline:none;white-space:pre}
 .mdt-lab{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted, currentColor)}
-.mdt-btn{padding:5px 11px;font:inherit;font-size:12px;color:inherit;border:1px solid var(--border, currentColor);border-radius:9px;background:var(--bg-card);cursor:pointer;white-space:nowrap}
+.mdt-btn{padding:5px 11px;font:inherit;font-size:12px;color:inherit;border:1px solid var(--border, currentColor);border-radius:var(--radius-sm);background:var(--bg-card);cursor:pointer;white-space:nowrap}
 .mdt-btn:hover:not(:disabled){background:var(--accent-light)}
 .mdt-btn:disabled{opacity:.55;cursor:default}
 .mdt-ops{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.mdt-grp{display:flex;gap:3px;align-items:center;padding:2px 5px;border:1px solid var(--border, currentColor);border-radius:10px}
+.mdt-grp{display:flex;gap:3px;align-items:center;padding:2px 5px;border:1px solid var(--border, currentColor);border-radius:var(--radius-sm)}
 .mdt-glab{font-size:10.5px;color:var(--text-muted, currentColor);padding:0 3px;white-space:nowrap}
-.mdt-ob{min-width:26px;height:24px;padding:0 6px;font:inherit;font-size:12.5px;line-height:1;color:inherit;background:transparent;border:1px solid transparent;border-radius:7px;cursor:pointer}
+.mdt-ob{min-width:26px;height:24px;padding:0 6px;font:inherit;font-size:12.5px;line-height:1;color:inherit;background:transparent;border:1px solid transparent;border-radius:calc(var(--radius-sm) - 2px);cursor:pointer}
 .mdt-ob:hover:not(:disabled){background:var(--accent-light);border-color:var(--border, currentColor)}
 .mdt-ob:disabled{opacity:.55;cursor:default}
 .mdt-layer{position:fixed;inset:0;pointer-events:none;z-index:60}
-.mdt-bar{position:fixed;left:0;top:0;display:none;gap:8px;align-items:center;pointer-events:auto;padding:4px 7px;border:1px solid var(--border, currentColor);border-radius:12px;background:var(--bg-glass);background:var(--bg-card);box-shadow:var(--card-shadow);color:inherit;font-size:13px;max-width:min(96vw,760px);overflow-x:auto}
+.mdt-bar{position:fixed;left:0;top:0;display:none;gap:8px;align-items:center;pointer-events:auto;padding:4px 7px;border:1px solid var(--border, currentColor);border-radius:var(--radius-md);background:var(--bg-glass);background:var(--bg-card);box-shadow:var(--card-shadow);color:inherit;font-size:13px;max-width:min(96vw,760px);overflow-x:auto}
 `
 
 // ── 小工具:一切用户内容只经 textContent(全文件零 HTML 字符串注入面) ──────────
